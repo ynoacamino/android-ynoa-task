@@ -1,11 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from '@/App';
+import { Toaster } from './components/ui/toaster';
+import { TaskProvider } from './components/providers/TaskProvider';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <TaskProvider>
     <App />
-  </React.StrictMode>,
+    <Toaster />
+  </TaskProvider>,
+  // </React.StrictMode>,
 );
